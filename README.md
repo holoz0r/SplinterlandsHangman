@@ -7,7 +7,7 @@ https://splinterlands.com?ref=holoz0r
 
 This game likely has lots of bugs. Please report them and I might enhance the game as I learn more Python. 
 
-As of today, this is day 7.
+At the time of writing, this is my progress with Python after 7 days. 
 
 To play, download the files and place them in a directory. 
 
