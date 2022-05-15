@@ -11,10 +11,12 @@ lives = 6
 print(logo)
 #Testing code
 # print(f'Pssst, the solution is {chosen_word}.')
-
+failures=[]
 display = []
 for _ in range(word_length):
     display += "_"
+    
+print("Your word to solve is: ",display)
 
 while not end_of_game:
     guess = input("Guess a letter: ").lower()
@@ -23,9 +25,18 @@ while not end_of_game:
         letter = chosen_word[position]
         if letter == guess:
             display[position] = letter
-            
+    
+    if guess in display:
+        print("You already guessed this letter, its in the word!")
+    
+    if guess in failures:
+        print(f"You have already guessed these letters: ", failures)
+    
     if guess not in chosen_word and lives >0:
       lives -= 1
+      failures.append(guess)
+      print(f"You entered {guess} and that isn't in the word.")
+      print(f"You have already guessed these letters: ", failures)
       print(f"You have {lives} lives left.")
       if lives == 0:
         end_of_game = True
